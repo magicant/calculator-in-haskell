@@ -33,3 +33,11 @@ test-suite doctest
     doctest >=0.9.9
   hs-source-dirs:      doctest
   default-language:    Haskell2010
+
+executable calc
+  main-is:             calc.hs
+  build-depends:
+    base >=4.7 && <4.8,
+    calculator
+  hs-source-dirs:      cli-src
+  default-language:    Haskell2010
