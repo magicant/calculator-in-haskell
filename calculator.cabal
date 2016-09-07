@@ -14,6 +14,7 @@ cabal-version:       >=1.10
 
 library
   exposed-modules:
+    Calculator.Eval,
     Calculator.Parsing,
     Calculator.Syntax
   -- other-modules:       
