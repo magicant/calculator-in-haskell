@@ -1,4 +1,4 @@
-> module Calculator.Parsing where
+> module Calculator.Parsing (parseExp) where
 
 Our parser is made using the "parsec" parser combinator library.
 
@@ -109,5 +109,11 @@ Parsing addition/subtraction expression is the same.
 > -- expecting digit
 > addSubExp :: Parsec String () Expression
 > addSubExp = chainl1 mulDivExp (fmap Operation addSub)
+
+Finally we define an entry point for our parser.
+
+> -- | Parses an entire expression.
+> parseExp :: String -> Either ParseError Expression
+> parseExp = parse addSubExp ""
 
 > -- vim: set et sw=4 tw=78:
